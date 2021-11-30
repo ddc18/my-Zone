@@ -1,0 +1,7 @@
+.floor-1 {
+  width: 75px;
+  height: 88px;
+  color: red;
+  background: url('../images/01.png');
+  transform: rotate(45deg);
+}
