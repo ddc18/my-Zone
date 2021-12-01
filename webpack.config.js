@@ -9,9 +9,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'production',
   devServer: {
-    port: 3000,
+    port: 4000,
     open: true,
-    contentBase: './dist',
+    contentBase: path.join(__dirname, "dist"),
     hot: true
   },
   entry: {
@@ -23,12 +23,6 @@ module.exports = {
   },
   //devtool 不会产生单独的文件， 但是可以显示行和列
   devtool: 'eval-source-map',
-  // optimization: { // 优化项
-  //   minimizer: [
-  //     new uglifyjsWebpackPlugin(),          //压缩js 用了OptimizeCss需设置js压缩
-  //     new OptimizeCss()                     //压缩css
-  //   ]
-  // },
   plugins: [
     // 清除dist文件夹
     new CleanWebpackPlugin(),
@@ -50,12 +44,13 @@ module.exports = {
     }),
     // 将样式通过link标签引入
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash:8].css'
+      filename: '[name].[hash:8].css'
     }),
     new webpack.NamedChunksPlugin(),        // 打印更新的模块路劲
     new webpack.HotModuleReplacementPlugin()// 热更新插件
   ],
   module: {
+    noParse: /jquery/,    // 不去解析jquery中的依赖库 优化打包速度
     rules: [
       // html中引入的图片进行打包
       {
@@ -76,14 +71,16 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         // 做一个限制 当我们的图片小于多少K的时候 用base64来转化
         // 否则用file-loader 
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 1,    // 小于200k
-            outputPath: 'images/',
-            publicPath: '/images/'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 100 * 1024,    // 小于多少转化成base64
+              outputPath: 'images/',
+              publicPath: 'images/'
+            }
           }
-        }
+        ]
       },
       {
         test: /\.js$/,
@@ -100,12 +97,12 @@ module.exports = {
         // exclude: /node_modules/ // 排除这个文件下的js
       },
       // style-loader 把css插入到head的标签中
-      // MiniCssExtractPlugin 将样式通过link标签引入
+      // MiniCssExtractPlugin 将样式通过link标签引入 使用这个插件将不进行css热更新
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          // 'style-loader',
+          // MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'postcss-loader',   //自动加css前缀 需要配置文件postcss.config.js
         ]

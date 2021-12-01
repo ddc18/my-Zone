@@ -1,15 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>崖滴地盘</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>崖滴地盘</title>
 </head>
+
 <body>
-  <div id="app">
-    <div class="floor-1">test</div>
-    <img src="../src/images/01.png" alt="#">
-  </div>
+    <div id="app">
+        <section class="floor floor-1" id="home">
+            <div class="bg-text">Hello</div>
+            <div class="man">
+                <img src="../src/images/99.png" alt="#">
+            </div>
+            <canvas id="spring-text"></canvas>
+            <div class="floor-fl">
+                <div class="transition-box"></div>
+            </div>
+            <div class="floor-fr">
+                <div class="transition-box"></div>
+            </div>
+            <div class="down">
+                <img src="../src/images/down.png" alt="#">
+            </div>
+        </section>
+        <section class="floor floor-2" id="about">
+            <div class="split split-1"></div>
+            <div class="resume">
+                <div class="resume-fl">
+                    <div class="header"></div>
+                    <div class="my-info">
+                        <div class="sub-title">自我介绍</div>
+                        <p>我是彭锰东，来自广东梅州的一个小山村，兴趣使然亦或生活所迫的双重使力，我成为了前端开发人员。平时没事的时候喜欢没有目的地的瞎逛、闲逛，玩游戏。性格豁达、随和。</p>
+                    </div>
+                    <div class="my-info my-info-exp">
+                        <div class="sub-title">工作经验</div>
+                        <p><span>2015-03 --- 2017-10</span><span>深圳市炫酷游互娱有限公司</span></p>
+                        <p><span>2017-10 --- 2019-07</span><span>物润船联网络股份有限公司</span></p>
+                        <p><span style="padding-right: 26px;">2019-07 --- 至今</span><span>软通动力（广州腾讯驻场外包开发）</span></p>
+                    </div>
+                </div>
+                <div class="resume-fr">
+                    <div class="my-info">
+                        <div class="sub-title">项目经历（带链接）</div>
+                        <a href="http://test-t10000-car.ship56.net" target="_blank">网络货运托运人平台（需要账号密码请联系我qq 171312115）</a>
+                        、<a href="http://test-invoice.ship56.net" target="_blank">撮合交易平台（需要账号密码请联系我）</a>
+                        、<a class="to-popup" data-src="0" href="javascript:void(0)">物润船联货运微信小程序</a>
+                        、<a href="javascript:void(0)">撮合3%开票承运人小程序（未上线）</a>
+                        、<a href="javascript:void(0)">无船船东版小程序（未上线）</a>
+                        、<a class="to-popup" data-src="1" href="javascript:void(0)">深圳航空体验官平台</a>
+                        、<a class="to-popup" data-src="2" href="javascript:void(0)">猫迹商城</a>
+                        、<a href="http://gdooo.xkygame.com/shop/" target="_blank">奇都商城pc端</a>
+                        、<a class="to-popup" data-src="3" href="javascript:void(0)">炫酷游官网移动端</a>
+                        、<a href="/project/YuriPlbu/index.html" target="_blank">优莉比芙官网</a>
+                        、<a href="/project/bls/index.html" target="_blank">布鲁森幼儿园官网</a>
+                        、<a class="to-popup" data-src="4" href="javascript:void(0)">立白洗衣液H5</a>
+                        、<a class="to-popup" data-src="5" href="javascript:void(0)">优乐美女生节H5</a>
+                        、<a class="to-popup" data-src="6" href="javascript:void(0)">999易善复H5</a>
+                    </div>
+                    <div class="my-info">
+                        <div class="sub-title">技能</div>
+                        <p>
+                            丰富的项目经验，提供一流的web前台界面和前端代码
+                            Photoshop
+                            、HTML、CSS、JavaScript、ES6、Vue.js、React.js、Gulp、Webpack、Git、Node.js、Mysql、MongoDB、JQuery、Bootstrap
+                            熟练开发微信小程序与移动端
+                            学习能力与解决问题能力强
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="split split-2"></div>
+        </section>
+        <section class="banner banner-1 clear-fix" id="banner-1">
+            <a href="http://test-t10000-car.ship56.net" target="_blank">
+                <div class="banner-fl">
+                    <div id="parallax-img-1">
+                        <img src="../src/images/1.png" alt="#">
+                    </div>
+                </div>
+                <div class="banner-fr">
+                    <div class="bg">D</div>
+                    <div id="parallax-1">
+                        <h3>货运托运人平台</h3>
+                        <p>使用vue vue-cli构建，多组件开发，使用vueX组件间通信与存储状态</p>
+                        <p>运用keep-alive对路由进行缓存，vue-router中配置每个路由的meta属性，进行判断不同的情况缓存</p>
+                        <p>运用Vue列表渲染特性，对数组进行操作渲染，实现配置多流程多步骤多人付款审批流程配置</p>
+                        <p>封装axios 进行异步交互，return出promise对象</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+        <section class="banner banner-2 clear-fix" id="banner-2">
+            <div class="banner-fl">
+                <div class="bg">D</div>
+                <div id="parallax-2">
+                    <h3>物润船联货运小程序</h3>
+                    <p>分托运人、承运人两种角色（托运人为pc托运人平台的简化版）</p>
+                    <p>承运人小程序能定位地址信息获取附近货源信息</p>
+                    <p>使用websocket实现油卡二维码支付</p>
+                    <p>能进行身份认证、司机认证、车辆认证</p>
+                </div>
+            </div>
+            <div class="banner-fr">
+                <div id="parallax-img-2">
+                    <img src="../src/images/2.png" alt="#">
+                </div>
+            </div>
+        </section>
+        <section class="banner banner-3 clear-fix" id="banner-3">
+            <div class="banner-fl">
+                <div id="parallax-img-3">
+                    <div class="clear-fix">
+                        <div class="img img-1">
+                            <img src="../src/images/5.png" alt="#">
+                        </div>
+                        <div class="img img-2">
+                            <a href="/project/bls/index.html" target="_blank">
+                                <img src="../src/images/4.png" alt="#">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clear-fix">
+                        <div class="img img-3">
+                            <a href="/project/YuriPlbu/index.html" target="_blank">
+                                <img src="../src/images/3.png" alt="#">
+                            </a>
+                        </div>
+                        <div class="img img-4">
+                            <img src="../src/images/6.png" alt="#">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-fr">
+                <div class="bg">c</div>
+                <div id="parallax-3">
+                    <h3>移动端H5活动页面与一些项目官网</h3>
+                    <p>图片自由截取与上传、微信分享、设计动画展示产品等</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="popup">
+        <div class="mask"></div>
+        <div class="popup-content">
+            <img class="popup-img" src="" alt="#">
+        </div>
+    </div>
 </body>
+
 </html>
