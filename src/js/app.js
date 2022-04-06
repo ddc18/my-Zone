@@ -20,11 +20,14 @@ let about = document.getElementById('about');
 let scrollTop1 = document.getElementById('banner-1').offsetTop;
 let scrollTop2 = document.getElementById('banner-2').offsetTop;
 let scrollTop3 = document.getElementById('banner-3').offsetTop;
+let scrollTop4 = document.getElementById('banner-4').offsetTop;
 let down = app.querySelector('.down');
 let parallaxImg1 = document.getElementById('parallax-img-1');
 let parallaxImg2 = document.getElementById('parallax-img-2');
+let parallaxImg3 = document.getElementById('parallax-img-3');
 let parallax1 = document.getElementById('parallax-1');
 let parallax2 = document.getElementById('parallax-2');
+let parallax3 = document.getElementById('parallax-3');
 let manImg = app.querySelector('.man');
 let popup = document.querySelector('.popup');
 let codeImgArr = [codeImg1, codeImg2, codeImg3, codeImg4, codeImg5, codeImg6, codeImg7]
@@ -345,9 +348,14 @@ popup.querySelector('.mask').addEventListener('click', function () {
 parallax1.setAttribute(`data-${scrollTop1 * 1.1}`, 'top: 0%');
 parallax1.setAttribute(`data-${scrollTop2}`, 'top: 40%');
 parallaxImg1.setAttribute(`data-${scrollTop1 * 1.1}`, 'top: 0%');
-parallaxImg1.setAttribute(`data-${scrollTop2}`, 'top: 30%');
+parallaxImg1.setAttribute(`data-${scrollTop2}`, 'top: 16%');
 parallax2.setAttribute(`data-${scrollTop2 * 1.1}`, 'top: 0%');
 parallax2.setAttribute(`data-${scrollTop3}`, 'top: 40%');
 parallaxImg2.setAttribute(`data-${scrollTop2 * 1.1}`, 'top: 0%');
 parallaxImg2.setAttribute(`data-${scrollTop3}`, 'top: 30%');
+parallax3.setAttribute(`data-${scrollTop3 * 1.1}`, 'top: 0%');
+parallax3.setAttribute(`data-${scrollTop4}`, 'top: 40%');
+parallaxImg3.setAttribute(`data-${scrollTop3 * 1.1}`, 'top: 0%');
+parallaxImg3.setAttribute(`data-${scrollTop4}`, 'top: 30%');
+
 skrollr.init();
