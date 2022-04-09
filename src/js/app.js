@@ -50,13 +50,13 @@ setTimeout(function () {
   (function () {
     // WRITTEN BY TRUMAN HEBERLE
     var COLOR = "#dddddd"
-    var MESSAGE = 'PengMengdong';
+    var MESSAGE = '       PengMengdong';
 
     var FONT_SIZE = 100;
     var AMOUNT = 3000;
     var CLEAR_AMOUNT = 2;
     var SIZE = 2;
-    var INITIAL_DISPLACEMENT = 200;
+    var INITIAL_DISPLACEMENT =100;
     var INITIAL_VELOCITY = 5;
     var VELOCITY_RETENTION = 0.95;
     var SETTLE_SPEED = 1;
